@@ -28,6 +28,9 @@ describe("game object contains correct keys", () => {
     test("choices contains the correct ids", () => {
         expect(game.choices).toEqual(["button1", "button2", "button3", "button4"]);
     });
+    test("turnNumber key exists", () => {
+        expect("turnNumber" in game).toBe(true);
+    });
 });
 
 describe("newGame works correctly", () => {
@@ -40,6 +43,9 @@ describe("newGame works correctly", () => {
     });
     test("should set game score to zero", () => {
         expect(game.score).toEqual(0);
+    });
+    test("should set turn number to zero", () => {
+        expect(game.turnNumber).toEqual(0);
     });
     test("should clear player moves array", () => {
         expect(game.playerMoves.length).toBe(0);
